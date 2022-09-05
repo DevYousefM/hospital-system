@@ -30,6 +30,11 @@
                             {{ __('Dashboard') }}
                         </x-nav-link>
                     </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('analysis')" :active="request()->routeIs('patients.create')">
+                            {{ __('Analysis') }}
+                        </x-nav-link>
+                    </div>
                     @if (Auth::user()->user_type == 'super')
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
@@ -41,12 +46,13 @@
                                 {{ __('New Patient') }}
                             </x-nav-link>
                         </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('users')" :active="request()->routeIs('users')">
+                                {{ __('Users') }}
+                            </x-nav-link>
+                        </div>
                     @endif
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('analysis')" :active="request()->routeIs('patients.create')">
-                            {{ __('Analysis') }}
-                        </x-nav-link>
-                    </div>
+
                 </div>
 
                 <!-- Settings Dropdown -->
@@ -107,6 +113,11 @@
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
             </div>
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('analysis')" :active="request()->routeIs('analysis')">
+                    {{ __('Analysis') }}
+                </x-responsive-nav-link>
+            </div>
             @if (Auth::user()->user_type === 'super')
                 <div class="pt-2 pb-3 space-y-1">
                     <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
@@ -118,12 +129,12 @@
                         {{ __('New Patient') }}
                     </x-responsive-nav-link>
                 </div>
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-responsive-nav-link :href="route('users')" :active="request()->routeIs('users')">
+                        {{ __('Users') }}
+                    </x-responsive-nav-link>
+                </div>
             @endif
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('analysis')" :active="request()->routeIs('analysis')">
-                    {{ __('Analysis') }}
-                </x-responsive-nav-link>
-            </div>
             <!-- Responsive Settings Options -->
             <div class="pt-4 pb-1 border-t border-gray-200">
                 <div class="px-4">

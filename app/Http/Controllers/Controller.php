@@ -37,6 +37,11 @@ class Controller extends BaseController
             return view("dashboard", ["patients" => Patient::all()]);
         }
     }
+    public function allUsers()
+    {
+        $users = User::all();
+        return view("allUsers", ["users" => $users]);
+    }
     public function analysis()
     {
         if (Auth::user()->user_type === "patient") {
@@ -73,6 +78,20 @@ class Controller extends BaseController
             Patient::where("patient_id", $id)->delete();
             User::where("username", $id)->delete();
             return redirect()->route("dashboard");
+        } else {
+            abort(403);
+        }
+    }
+    public function deleteUser($id)
+    {
+        if (auth()->user()->user_type === "super" ) {
+            if(!(auth()->user()->username == $id)){
+                User::where("username", $id)->delete();
+                return redirect()->route("users");
+            }else{
+                return redirect()->route("dashboard");
+            }
+
         } else {
             abort(403);
         }

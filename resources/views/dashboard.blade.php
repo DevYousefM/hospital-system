@@ -62,7 +62,7 @@
                                 <td>{{ $item->doctor_name }}</td>
                                 @if (auth()->user()->user_type === 'super')
                                     <td><a href={{ route('delete', ['id' => $item->patient_id]) }}><button
-                                                class='delBtn'>Delete</button></a></td>
+                                                class='delBtn' onclick="return confirm('Delete This Patient?');" >Delete</button></a></td>
                                 @endif
                             </tr>
                         @endforeach
