@@ -1,0 +1,15 @@
+body > div {
+    background-image: url("../imgs/login_bg.jpg") !important ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header,
+.footer {
+    color: rgb(0, 179, 255);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    font-weight: 600;
+}
+.header {
+    font-size: 25px;
+}

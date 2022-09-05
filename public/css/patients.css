@@ -1,0 +1,64 @@
+div.anal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+table,
+div.anal .input-group {
+    width: 95%;
+}
+thead {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+div.anal th {
+    padding: 6px 0px;
+    text-align: center;
+}
+div.anal td {
+    text-align: center;
+    border: rgba(0, 0, 0, 0.4) solid 1px;
+}
+table button {
+    width: 100%;
+    padding: 6px 0;
+    border: solid 2px rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+button.updateBtn {
+    background-color: #4f94fc;
+}
+button.delBtn {
+    background-color: #dc3545;
+    color: white;
+}
+button.updateBtn:hover {
+    background-color: #4f94fcdc;
+}
+button.delBtn:hover {
+    background-color: #dc3546cc;
+}
+div.anal > a {
+    width: 90%;
+    margin-left: 3px;
+    text-decoration: underline;
+    text-align: start;
+}
+.show {
+    text-decoration: underline;
+    color: rgb(0, 149, 255);
+}
+a.allP {
+    text-decoration: none;
+}
+@media (max-width: 500px) {
+    table {
+        font-size: 10px;
+    }
+}
